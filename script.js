@@ -1,13 +1,13 @@
 /*
   VELOURA WEBSITE SETTINGS
   1. Replace whatsappNumber with the seller's WhatsApp number in international format.
-     Nigeria example: 2348012345678 (no +, spaces, or leading 0).
+     Nigeria example: 2348153388362 (no +, spaces, or leading 0).
   2. Update email, location, social links and product details below.
 */
 const SITE_CONFIG = {
-  businessName: "Veloura Scent Studio",
-  whatsappNumber: "2348012345678", // CHANGE THIS to the seller's real WhatsApp number
-  email: "hello@example.com",       // CHANGE THIS to the seller's business email
+  businessName: "Mimi's Scent",
+  whatsappNumber: "2348153388362", // CHANGE THIS to the seller's real WhatsApp number
+  email: "miracleokwiri@gmail.com",       // CHANGE THIS to the seller's business email
   location: "Nigeria",              // CHANGE THIS to the seller's city/service area
   instagramUrl: "",                 // Optional: paste the Instagram profile URL
   currency: "NGN"
@@ -18,8 +18,8 @@ const PRODUCTS = [
   { id: "petal-noir", name: "Petal Noir", notes: "Rose · Peony · Musk", category: "floral", price: 32000, label: "A SOFT ROMANCE", image: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=85", description: "A graceful floral with a modern finish." },
   { id: "citrus-muse", name: "Citrus Muse", notes: "Bergamot · Citrus · White tea", category: "fresh", price: 24500, label: "FRESH & BRIGHT", image: "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=85", description: "Fresh, uplifting and effortlessly clean." },
   { id: "oud-afterglow", name: "Oud Afterglow", notes: "Oud · Spice · Dark woods", category: "warm", price: 38000, label: "BOLD CHARACTER", image: "https://images.unsplash.com/photo-1595425970377-c9703cf48b6d?auto=format&fit=crop&w=900&q=85", description: "Deep woods and spice with a memorable trail." },
-  { id: "bloom-theory", name: "Bloom Theory", notes: "Jasmine · Orange blossom · Musk", category: "floral", price: 27000, label: "EVERYDAY FAVOURITE", image: "https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=900&q=85", description: "A luminous bouquet with a soft, clean finish." },
-  { id: "blue-hour", name: "Blue Hour", notes: "Marine notes · Lavender · Cedar", category: "fresh", price: 30000, label: "COOL & REFINED", image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=900&q=85", description: "Crisp, calm and polished from day to night." }
+  { id: "bloom-theory", name: "Bloom Theory", notes: "Jasmine · Orange blossom · Musk", category: "floral", price: 27000, label: "EVERYDAY FAVOURITE", image: "https://images.unsplash.com/photo-1613521140785-e85e427f8002?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D", description: "A luminous bouquet with a soft, clean finish." },
+  { id: "blue-hour", name: "Blue Hour", notes: "Marine notes · Lavender · Cedar", category: "fresh", price: 30000, label: "COOL & REFINED", image: "https://images.unsplash.com/photo-1676902005584-54c949f934a9?q=80&w=804&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D", description: "Crisp, calm and polished from day to night." }
 ];
 
 function formatPrice(price) {
@@ -29,7 +29,7 @@ function formatPrice(price) {
 function whatsappUrl(message) {
   const number = (SITE_CONFIG.whatsappNumber || "").replace(/\D/g, "");
   const text = encodeURIComponent(message);
-  if (!number || number === "2348012345678") {
+  if (!number || number === "2348153388362") {
     return `https://wa.me/?text=${text}`;
   }
   return `https://wa.me/${number}?text=${text}`;
@@ -47,7 +47,7 @@ function productCard(product) {
       </a>
       <div class="product-info"><div><h3>${product.name}</h3><p>${product.notes}</p></div><strong class="product-price">${formatPrice(product.price)}</strong></div>
       <p class="product-description">${product.description}</p>
-      <a class="order-button" href="${whatsappUrl(orderMessage(product))}" target="_blank" rel="noopener noreferrer">Order on WhatsApp <span>↗</span></a>
+      <a class="order-button" href="${whatsappUrl(orderMessage(product))}" target="_blank" rel="noopener noreferrer">Order Now <span>↗</span></a>
     </article>`;
 }
 
@@ -109,7 +109,7 @@ function setupContactDetails() {
   const emailText = document.getElementById("contact-email-text");
   const emailLink = document.getElementById("email-link");
   const locationText = document.getElementById("business-location-text");
-  if (emailText && SITE_CONFIG.email && SITE_CONFIG.email !== "hello@example.com") emailText.textContent = SITE_CONFIG.email;
+  if (emailText && SITE_CONFIG.email && SITE_CONFIG.email !== "miracleokwiri@gmail.com") emailText.textContent = SITE_CONFIG.email;
   if (emailLink && SITE_CONFIG.email) {
     emailLink.href = `mailto:${SITE_CONFIG.email}`;
     emailLink.textContent = "Send us an email →";
