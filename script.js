@@ -43,11 +43,11 @@ function productCard(product) {
   return `
     <article class="product-card" data-category="${product.category}">
       <a class="product-image-link" href="#" aria-label="Enquire about ${product.name}" data-order-id="${product.id}">
-        <div class="product-image-wrap"><img src="${product.image}" alt="${product.name} perfume" loading="lazy"><span class="product-label">${product.label}</span><span class="product-arrow">↗</span></div>
+        <div class="product-image-wrap"><img src="${product.image}" alt="${product.name} perfume" loading="lazy"><span class="product-label">${product.label}</span><span class="product-arrow"></span></div>
       </a>
       <div class="product-info"><div><h3>${product.name}</h3><p>${product.notes}</p></div><strong class="product-price">${formatPrice(product.price)}</strong></div>
       <p class="product-description">${product.description}</p>
-      <a class="order-button" href="${whatsappUrl(orderMessage(product))}" target="_blank" rel="noopener noreferrer">Order Now <span>↗</span></a>
+      <a class="order-button" href="${whatsappUrl(orderMessage(product))}" target="_blank" rel="noopener noreferrer">Order Now <span></span></a>
     </article>`;
 }
 
